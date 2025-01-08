@@ -23,38 +23,59 @@ function deleteChildElements(parent) {
 */
 
 // grab the element with the id games-container
+
 const gamesContainer = document.getElementById("games-container");
 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
 
 
-    // loop over each item in the data
+        // loop over each item in the data
+
     for (let i = 0; i < games.length; i++) {
         console.log(games[i]);
-    // create a new div element, which will become the game card
+
+        // create a new div element, which will become the game card
+
         const gamesElement = document.createElement('div');
-        gamesElement.textContent = games[i];
-        container.appendChild(gamesElement);
-    }
+        gamesCard.textContent = games[i];
+        gamesContainer.appendChild(gamesCard);
 
-    
         // add the class game-card to the list
-        gamesElement.classList.add("game-card");
 
+        gamesCard.classList.add("game-card");
 
         // set the inner HTML using a template literal to display some info 
         // about each game
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
 
-        div.innerHTML()
+        const gamesCard = `
+            <div class = "gamesCard" 
+                <img src= ${games[i].img} alt= "Image of ${games[i].img} class(".game-img")/>
+                <h2> ${games[i].name} </h2>
+                <p> Age Rating: ${games[i].age}</p>
+                <p> Description: ${games[i].description}</p>
+                <p> Release Date: ${games[i].release}</p>
+                <p> Stars: ${games[i].number}</p>
+                <p> Reviews: ${games[i].reviews}</p>
 
+        `;
+
+        document.body.innerHTML = gamesCard;
 
         // append the game to the games-container
 
-}
+        gamesContainer.appendChild(gamesCard);
 
+        }
+    }
+
+    
+        
+
+
+        
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
 

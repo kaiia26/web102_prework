@@ -28,14 +28,17 @@ const gamesContainer = document.getElementById("games-container");
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
 
+
     // loop over each item in the data
     for (let i = 0; i < games.length; i++) {
-        console.log(games[i])
+        console.log(games[i]);
+    // create a new div element, which will become the game card
+        const gamesElement = document.createElement('div');
+        gamesElement.textContent = games[i];
+        container.appendChild(gamesElement);
     }
-        
 
-
-        // create a new div element, which will become the game card
+    
 
 
         // add the class game-card to the list

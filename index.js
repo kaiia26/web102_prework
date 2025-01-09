@@ -40,7 +40,7 @@ function addGamesToPage(games) {
 
         // set the inner HTML using a template literal to display some info 
         gameCard.innerHTML = `
-                <img src= ${games[i].img} alt= "Image of ${games[i].img} class(".game-img")/>
+                <img src= ${games[i].img} alt= "Image of ${games[i].name} class(".game-img")/>
                 <h2> ${games[i].name} </h2>
                 <p> Age Rating: ${games[i].age}</p>
                 <p> Description: ${games[i].description}</p>
@@ -61,6 +61,7 @@ function addGamesToPage(games) {
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
 
+addGamesToPage(GAMES_JSON);
 
 
 /*************************************************************************************

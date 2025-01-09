@@ -85,11 +85,22 @@ contributionsCard.innerHTML = `${commas}`;
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
 
+const amount = GAMES_JSON.reduce((accumulator, game) => {
+    return accumulator + game.pledged;
+}, 0);
+
 // set inner HTML using template literal
+const num = amount.toLocaleString('en-US');
+raisedCard.innerHTML = `$${num}`;
 
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
+const numsGames = GAMES_JSON.length
+
+// set inner HTML using template literal
+const innergames = numsGames.toLocaleString('en-US');
+gamesCard.innerHTML = `${innergames}`;
 
 
 /*************************************************************************************

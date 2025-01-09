@@ -96,7 +96,7 @@ raisedCard.innerHTML = `$${num}`;
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-const numsGames = GAMES_JSON.length
+const numsGames = GAMES_JSON.length;
 
 // set inner HTML using template literal
 const innergames = numsGames.toLocaleString('en-US');

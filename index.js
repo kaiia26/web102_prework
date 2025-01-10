@@ -159,9 +159,11 @@ const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
 
+const unfundedGamesCount = GAMES_JSON.filter(game => game.pledged < game.goal).length;
 
 // create a string that explains the number of unfunded games using the ternary operator
 
+descriptionContainer.textContent = `There are ${unfundedGamesCount} unfunded games.`
 
 // create a new DOM element containing the template string and append it to the description container
 

@@ -122,7 +122,6 @@ function filterUnfundedOnly() {
     addGamesToPage(unfundedGames);
 }
 
-filterUnfundedOnly();
 // show only games that are fully funded
 function filterFundedOnly() {
     deleteChildElements(gamesContainer);
@@ -134,8 +133,6 @@ function filterFundedOnly() {
     // use the function we previously created to add unfunded games to the DOM
     addGamesToPage(fundedGames);
 }
-
-filterFundedOnly();
 
 // show all games
 function showAllGames() {
@@ -152,9 +149,9 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-unfundedBtn.addEventListener("unfunded-btn").addEventListener("click", filterUnfundedOnly);
-fundedBtn.addEventListener("funded-btn").addEventListener("click", filterFundedOnly);
-allBtn.addEventListener("all-btn").addEventListener("click", showAllGames);
+unfundedBtn.addEventListener("click", filterUnfundedOnly);
+fundedBtn.addEventListener("click", filterFundedOnly);
+allBtn.addEventListener("click", showAllGames);
 
 
 /*************************************************************************************

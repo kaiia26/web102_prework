@@ -54,8 +54,6 @@ function addGamesToPage(games) {
 
         }
     }
-
-
         
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
@@ -115,8 +113,7 @@ function filterUnfundedOnly() {
 
 
     // use filter() to get a list of games that have not yet met their goal
-    unfundedGames = GAMES_JSON.filter((games) => games.pledged < games.goal);
-    console.log(unfundedGames);
+    const unfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal);
 
     // use the function we previously created to add the unfunded games to the DOM
     addGamesToPage(unfundedGames);
@@ -127,8 +124,7 @@ function filterFundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have met or exceeded their goal
-    fundedGames = GAMES_JSON.filter((games)  => games.pledged >= games.goal);
-    console.log(fundedGames);
+    const fundedGames = GAMES_JSON.filter(game => game.pledged >= game.goal);
 
     // use the function we previously created to add unfunded games to the DOM
     addGamesToPage(fundedGames);
@@ -140,7 +136,6 @@ function showAllGames() {
 
     // add all games from the JSON data to the DOM
     addGamesToPage(GAMES_JSON);
-
 }
 
 // select each button in the "Our Games" section
@@ -183,6 +178,7 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
 

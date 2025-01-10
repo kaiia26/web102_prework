@@ -167,6 +167,9 @@ descriptionContainer.textContent = `There are ${unfundedGamesCount} unfunded gam
 
 // create a new DOM element containing the template string and append it to the description container
 
+const descriptionUnfundedGames = document.createElement("div");
+descriptionContainer.appendChild(descriptionUnfundedGames);
+
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 

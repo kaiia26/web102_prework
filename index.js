@@ -152,9 +152,9 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-unfundedBtn.getElementById("unfunded-btn").addEventListener("click", filterUnfundedOnly);
-fundedBtn.getElementById("funded-btn").addEventListener("click", filterFundedOnly);
-allBtn.getElementById("all-btn").addEventListener("click", showAllGames);
+unfundedBtn.addEventListener("unfunded-btn").addEventListener("click", filterUnfundedOnly);
+fundedBtn.addEventListener("funded-btn").addEventListener("click", filterFundedOnly);
+allBtn.addEventListener("all-btn").addEventListener("click", showAllGames);
 
 
 /*************************************************************************************

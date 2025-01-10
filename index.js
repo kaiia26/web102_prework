@@ -113,23 +113,29 @@ gamesCard.innerHTML = `${innergames}`;
 function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
 
-    // use filter() to get a list of games that have not yet met their goal
 
+    // use filter() to get a list of games that have not yet met their goal
+    unfundedGames = GAMES_JSON.filter((games) => games.pledged < games.goal);
+    console.log(unfundedGames);
 
     // use the function we previously created to add the unfunded games to the DOM
-
+    addGamesToPage(unfundedGames);
 }
 
+filterUnfundedOnly();
 // show only games that are fully funded
 function filterFundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have met or exceeded their goal
-
+    fundedGames = GAMES_JSON.filter((games)  => games.pledged >= games.goal);
+    console.log(fundedGames);
 
     // use the function we previously created to add unfunded games to the DOM
-
+    addGamesToPage(fundedGames);
 }
+
+filterFundedOnly();
 
 // show all games
 function showAllGames() {
